@@ -10,8 +10,6 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(pedal_stroke_publisher src/pedal_stroke_publisher.cpp)
-ament_target_dependencies(pedal_stroke_publisher rclcpp std_msgs)
 add_executable(motor_node src/motor_node.cpp)
 ament_target_dependencies(motor_node rclcpp std_msgs)
 		
@@ -21,7 +19,6 @@ ament_target_dependencies(motor_node rclcpp std_msgs)
 
 # Install executable
 install(TARGETS 
-  pedal_stroke_publisher
   motor_node
   DESTINATION lib/${PROJECT_NAME})
 
